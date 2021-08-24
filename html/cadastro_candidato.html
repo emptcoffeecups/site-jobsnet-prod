@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Candidato</title>
+
+    <link rel="icon" type="image/x-icon" href="../resources/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+</head>
+
+<body>
+
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="column is-1">
+            <a href="../index.html">
+                <img src="../resources/logo.png" alt="logotipo_empresa_jobsnet">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="../index.html" class="navbar-item is-size-5">
+                    Home
+                </a>
+                <a href="./vagas.html" class="navbar-item is-size-5">
+                    Vagas
+                </a>
+                <a href="./candidatos.html" class="navbar-item is-size-5">
+                    Candidatos
+                </a>
+                <a href="./cadastro_vaga.html" class="navbar-item is-size-5">
+                    Cadastrar Vaga
+                </a>
+            </div>
+            <div class="redes-sociais">
+                <ul>
+                    <li class="column is-inline-block"><a href="mailto:empt.coffee.cups@gmail.com"><img
+                                src="../resources/email.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://twitter.com/jobsnet3"><img
+                                src="../resources/twiter.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://www.facebook.com/jobsnett/"><img
+                                src="../resources/face.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://www.instagram.com/jobsnet.in/"><img
+                                src="../resources/insta.png"></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+   <div class="columns is-centered">
+
+        <div id='formulario' class="box column is-two-thirds">
+            <form onsubmit="return false;">
+                <div class="column is-full ">
+                    <label for="nome" class="label">Nome Completo</label>
+                    <input type="text" id="nome" class="input" maxlength="80" size="80" required /> <!-- tamanho -->
+                </div>
+
+
+                <div class="column is-inline-block">
+                    <label for="nascimento" class="label">Data de Nascimento</label>
+                    <input type="text" id="nascimento" class="input" maxlength="10"  data-js='nascimento' required>
+                </div>
+                <div class="column is-inline-block">
+                    <label for="cpf" class="label">CPF</label>
+                    <input type="text" onblur="validaCpf(this)" id="cpf" class="input" maxlength="14" data-js="cpf" required>
+                </div>
+                <span id="span-cpf" class="has-text-primary is-hidden">*CPF Válido</span>
+
+                <div class="box">
+                    <div onclick="mostraEndereco()" class="column is-inline-block">
+                        <h2 class="title is-4">Endereço:</h2>
+                    </div>
+                    <div class="column is-one-fifth is-inline-block">
+                        <label for="cep" class="label">CEP</label>
+                        <input type="search" id="cep" onblur="consultaCEP()" class="input" maxlength="9" data-js="cep" required />
+                    </div>
+
+                    <div id="caixa_endereco">
+
+                        <div class="column is-three-fifths is-inline-block">
+                            <label for="logradouro" class="label">Logradouro</label>
+                            <input type="text" name="" id="logradouro" class="input" maxlength="100" required>
+                        </div>
+                        <div class="column is-2 is-inline-block">
+                            <label for="complemento" class="label">Complemento</label>
+                            <input type="text" name="" id="complemento" class="input" maxlength="100">
+                        </div>
+                        <div class="column is-2 is-inline-block">
+                            <label for="numero_logradouro" class="label">Número</label>
+                            <input type="text" name="" id="numero" class="input" maxlength="8" required>
+                        </div>
+                        <div class="column is-4 is-inline-block">
+                            <label for="bairro" class="label">Bairro</label>
+                            <input type="text" name="" id="bairro" class="input" maxlength="100" required>
+                        </div>
+                        <div class="column is-4 is-inline-block">
+                            <label for="cidade" class="label">Cidade</label>
+                            <input type="text" name="" id="cidade" class="input" maxlength="60" required>
+                        </div>
+                        <div class="column is-3 is-inline-block">
+                            <label for="uf" class="label">Estado (UF):</label>
+                            <input type="text" name="" id="uf" class="input" maxlength="2" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-inline-block">
+                    <label for="telefone" class="label">Telefone</label>
+                    <input type="tel" name="" id="telefone" class="input" data-js="telefone" maxlength="15" required>
+                </div>
+                <div class="column is-inline-block">
+                    <label for="email" class="label">Email</label>
+                    <input type="email" name="" id="email" class="input" maxlength="30" required>
+                </div>
+                
+                <!--CAMPOD E IMPLEMENTAÇÃO DE NOVA FUNCIONALIDADE: ADICIONAR UPLOAD DE CURRÍCULO-->
+                <!-- <div class="file column">
+                    <label class="file-label">
+                        <input type="file" name="upload" id="pdf" accept="application/pdf,application/vnd.ms-excel"
+                            class="file-input" />
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <img src="./resources/upload-icon.png" alt="icone-upload">
+                            </span>
+                            <span class="file-label">
+                                Anexe seu currículo…
+                            </span>
+                        </span>
+                    </label>
+                </div> -->
+
+                <div class="column">
+                    <button onclick="cadastrar()" class="button is-primary ">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <footer class="footer has-text-centered">
+        Desenvolvido por Empty Coffee Cups &copy;
+        <p>
+            <a href="https://github.com/emptcoffeecups" target="_blank">
+                Projeto no Github
+            </a>
+        </p>
+    </footer>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/mascaras.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

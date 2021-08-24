@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JobsNet Home</title>
+    <link rel="icon" type="image/x-icon" href="./resources/logo.png">
+    <!-- Bulma Version 0.9.0-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+</head>
+
+<body>
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="column is-1">
+            <a href="./index.html">
+                <img src="./resources/logo.png" alt="logotipo_empresa_jobsnet">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a href="./index.html" class="navbar-item is-size-5">
+                    Home
+                </a>
+                <a href="./html/vagas.html" class="navbar-item is-size-5">
+                    Vagas
+                </a>
+                <a href="./html/candidatos.html" class="navbar-item is-size-5">
+                    Candidatos
+                </a>
+                <a href="./html/cadastro_vaga.html" class="navbar-item is-size-5">
+                    Cadastrar Vaga
+                </a>
+            </div>
+            <div class="redes-sociais">
+                <ul>
+                    <li class="column is-inline-block"><a href="mailto:empt.coffee.cups@gmail.com"><img
+                                src="./resources/email.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://twitter.com/jobsnet3"><img
+                                src="./resources/twiter.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://www.facebook.com/jobsnett/"><img
+                                src="./resources/face.png"></a></li>
+                    <li class="column is-inline-block"><a href="https://www.instagram.com/jobsnet.in/"><img
+                                src="./resources/insta.png"></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <figure class="image">
+            <img src="./resources/pexels-trabalho.jpg">
+        </figure>
+    </section>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <h1 class="title">Um pouco sobre a JobsNet</h1>
+            <p>A Jobsnet é uma plataforma de oportunidades profissionais e busca de talentos que oferece ferramentas
+                simples para gerir e facilitar os processos seletivos. E aos candidatos a vantagem de cadastrarem seus
+                currículos de forma gratuita.
+                A marca Jobsnet pertencente à empty-coffee que tem foco em negócios online e atende os segmentos de:
+                mídia, jobsites.
+            </p>
+
+            <br></br>
+            <h2 class="title">Vagas recentes</h2>
+            <div class="columns is-centered"> 
+                <div id="lista_vagas" class="column is-9">
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">Contate-nos</h2>
+
+            <form action="mailto: empt.coffee.cups@gmail.com"> 
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Nome">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="Email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Menssagem"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary">
+                                    Enviar Mensagem 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer has-text-centered">
+        Desenvolvido por Empty Coffee Cups &copy;
+        <p>
+            <a href="https://github.com/emptcoffeecups" target="_blank">
+                Projeto no Github
+            </a>
+        </p>
+    </footer>
+    
+    <script src="./js/lista-vagas-home.js"></script>
+</body>
+
+</html>
